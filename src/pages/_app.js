@@ -1,8 +1,8 @@
-import "@/styles/globals.css";
 import { css } from "@emotion/react";
 import localFont from "next/font/local";
 import { globalStyles } from "@/styles/global";
 import { Global } from "@emotion/react";
+import { RecoilRoot } from "recoil";
 
 const pretendard = localFont({
   src: [
@@ -50,16 +50,18 @@ const pretendard = localFont({
 export default function App({ Component, pageProps }) {
   return (
     <div className={pretendard.variable}>
-      <Global
-        styles={css`
-          ${globalStyles}
-          body {
-            font-family: ${pretendard.style.fontFamily};
-          }
-        `}
-      />
+      <RecoilRoot>
+        <Global
+          styles={css`
+            ${globalStyles}
+            body {
+              font-family: ${pretendard.style.fontFamily};
+            }
+          `}
+        />
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
+      </RecoilRoot>
     </div>
   );
 }

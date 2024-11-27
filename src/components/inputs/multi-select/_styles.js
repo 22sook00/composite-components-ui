@@ -1,47 +1,43 @@
-import styled from '@emotion/styled'
-import { MenuItem, createTheme } from '@mui/material'
-import MuiSelect from '@mui/material/Select'
-import { color } from '@/styles/values/color'
-import { typography } from '@/styles/values/typography'
-import { utils } from '@/styles/values/utils'
-import { TextSC } from '@/styles/components/global'
-import { Typography } from '@/components/common/typography/Typography'
+import styled from "@emotion/styled";
+import { createTheme } from "@mui/material";
+import MuiSelect from "@mui/material/Select";
+import { utils } from "@/styles/values/utils";
 
 export const selectTheme = createTheme({
   components: {
     MuiPaper: {
       styleOverrides: {
         root: ({}) => ({
-          overflow: 'hidden',
-          boxShadow: 'none',
+          overflow: "hidden",
+          boxShadow: "none",
 
-          background: '#F8F8F8',
-          border: '1px solid #eee',
-          borderTop: 'none',
-          borderRadius: '0 0 4px 4px',
+          background: "#F8F8F8",
+          border: "1px solid #eee",
+          borderTop: "none",
+          borderRadius: "0 0 4px 4px",
         }),
       },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          fontFamily: 'Pretendard !important',
-          '& .MuiOutlinedInput-notchedOutline': {
+          fontFamily: "Pretendard !important",
+          "& .MuiOutlinedInput-notchedOutline": {
             border: `1px solid #eee `,
           },
-          '&:hover .MuiOutlinedInput-notchedOutline': {
-            border: 'unset',
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "unset",
           },
-          '&.Mui-focused ': {
-            border: 'unset',
+          "&.Mui-focused ": {
+            border: "unset",
           },
 
-          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: `1px solid #eee`,
           },
-          '&.Mui-error .MuiOutlinedInput-notchedOutline': {
-            border: `1px solid ${color.system.error.red[300]} !important`,
-            borderWidth: '1px ',
+          "&.Mui-error .MuiOutlinedInput-notchedOutline": {
+            border: `1px solid #FF1751 !important`,
+            borderWidth: "1px ",
           },
         },
       },
@@ -49,12 +45,12 @@ export const selectTheme = createTheme({
     MuiSelect: {
       styleOverrides: {
         root: {
-          '& .MuiOutlinedInput': {
+          "& .MuiOutlinedInput": {
             border: `1px solid red `,
           },
         },
         select: {
-          '&.MuiSelect-select': {
+          "&.MuiSelect-select": {
             minHeight: `auto`,
           },
         },
@@ -63,34 +59,34 @@ export const selectTheme = createTheme({
     MuiCheckbox: {
       styleOverrides: {
         root: ({}) => ({
-          padding: '0px',
+          padding: "0px",
         }),
       },
     },
     MuiList: {
       styleOverrides: {
         root: ({}) => ({
-          overflowY: 'auto',
+          overflowY: "auto",
           padding: 0,
-          '& li': {
-            height: '32px',
-            color: '#666',
+          "& li": {
+            height: "32px",
+            color: "#666",
             fontSize: 14,
             padding: 0,
-            gap: '8px',
+            gap: "8px",
           },
-          '& li:hover': {
+          "& li:hover": {
             background: `transparent !important`,
           },
-          '& li.Mui-selected': {
-            background: 'transparent',
+          "& li.Mui-selected": {
+            background: "transparent",
           },
 
-          '& li.Mui-disabled': {
-            background: 'transparent',
+          "& li.Mui-disabled": {
+            background: "transparent",
           },
-          '& li.Mui-focusVisible': {
-            backgroundColor: 'transparent',
+          "& li.Mui-focusVisible": {
+            backgroundColor: "transparent",
           },
         }),
       },
@@ -99,13 +95,13 @@ export const selectTheme = createTheme({
 
   palette: {
     primary: {
-      main: color.primary.purple[300],
+      main: "#9D42FB",
     },
     error: {
-      main: color.system.error.red[300],
+      main: "#FF3366",
     },
   },
-})
+});
 
 export const SelectContainer = styled.div`
   position: relative;
@@ -113,14 +109,14 @@ export const SelectContainer = styled.div`
   .Mui-disabled .MuiOutlinedInput-notchedOutline {
     border-color: #eee !important;
   }
-`
+`;
 
 export const SelectBox = styled(MuiSelect)`
-  width: ${({ width }) => (width ? `${width}px` : '100%')};
+  width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: 32px;
-  background-color: ${({ disabled }) => (disabled ? color.grayscale.gray[100] : '#fff')};
+  background-color: ${({ disabled }) => (disabled ? "#eee" : "#fff")};
 
-  border-radius: ${({ open }) => (open ? '4px 4px 0 0' : '4px')};
+  border-radius: ${({ open }) => (open ? "4px 4px 0 0" : "4px")};
 
   svg {
     position: absolute;
@@ -131,7 +127,7 @@ export const SelectBox = styled(MuiSelect)`
   }
 
   .MuiInputBase-input {
-    width: ${({ width }) => (width ? `${width - 20}px` : '90%')};
+    width: ${({ width }) => (width ? `${width - 20}px` : "90%")};
     padding: 0px;
     padding-left: 10px;
     padding-right: 0px !important;
@@ -151,25 +147,26 @@ export const SelectBox = styled(MuiSelect)`
 
   :hover {
     fieldset {
-      border: ${({ status, type }) => status === 'false' && type !== 'top' && `1px solid #eee !important`};
+      border: ${({ status, type }) =>
+        status === "false" && type !== "top" && `1px solid #eee !important`};
     }
   }
-`
+`;
 
 export const SelectMenuText = styled.span`
   width: ${({ width }) => `${width}px`};
   ${utils.ellipsis}
   color: ${({ disabled }) => disabled && color.grayscale.gray[400]};
-`
+`;
 export const PlaceholderContainer = styled.div`
   p {
     word-break: break-all;
   }
-`
+`;
 export const CountChip = styled.div`
   position: absolute;
   right: 34px;
-`
+`;
 
 //table 에서 사용되는 멀티셀렉트
 export const TableMultiSelectBox = styled(SelectBox)`
@@ -179,8 +176,8 @@ export const TableMultiSelectBox = styled(SelectBox)`
   .MuiInputBase-input {
     padding-left: 0;
   }
-`
+`;
 
 export const MultiSelectOptionButton = styled.div`
   ${utils.ellipsis}
-`
+`;

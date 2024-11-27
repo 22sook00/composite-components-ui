@@ -1,34 +1,36 @@
-import { useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
-import { formatTextSlice } from '@/js/util/formatUtil'
-import { Button } from '@/components/common/buttons'
-import { Typography } from '@/components/common/typography/Typography'
-import * as SC from './_styles'
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
-const Title = props => <SC.Title {...props}>{props.children}</SC.Title>
+import { Button } from "@/components/buttons";
+import { Typography } from "@/components/typography/Typography";
+import * as SC from "./_styles";
+import { formatTextSlice } from "@/utils/formatUtil";
 
-const Content = props => <SC.Content {...props}>{props.children}</SC.Content>
+const Title = (props) => <SC.Title {...props}>{props.children}</SC.Title>;
+
+const Content = (props) => <SC.Content {...props}>{props.children}</SC.Content>;
 
 export const PopupMain = ({
   children,
   title,
   content,
-  confirmText = '확인',
-  cancelText = '취소',
-  direction = 'row',
+  confirmText = "확인",
+  cancelText = "취소",
+  direction = "row",
   onConfirm,
   onCancel,
 }) => {
-  const [mounted, setMounted] = useState(false)
-  const ref = useRef()
+  const [mounted, setMounted] = useState(false);
+  const ref = useRef();
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
+
     if (document) {
-      const dom = document.getElementById('dialog-root')
-      ref.current = dom
+      const dom = document.getElementById("dialog-root");
+      ref.current = dom;
     }
-  }, [])
+  }, []);
 
   if (ref.current && mounted) {
     return createPortal(
@@ -37,12 +39,14 @@ export const PopupMain = ({
         <SC.Container>
           {title && (
             <Title>
-              <Typography.Title1 ta={'center'}>{formatTextSlice(title, 16)}</Typography.Title1>
+              <Typography.Title1 ta={"center"}>
+                {formatTextSlice(title, 16)}
+              </Typography.Title1>
             </Title>
           )}
           {content && (
             <Content>
-              <Typography.Body2 c="#666666" lineClamp={10} ta={'center'}>
+              <Typography.Body2 c="#666666" lineClamp={10} ta={"center"}>
                 {content}
               </Typography.Body2>
             </Content>
@@ -51,27 +55,30 @@ export const PopupMain = ({
 
           <SC.Footer col={direction}>
             {onCancel && (
-              <Button size={'lg'} w={'100%'} onClick={onCancel} theme={'gray'}>
-                {formatTextSlice(cancelText, direction === 'row' ? 7 : 18)}
+              <Button size={"lg"} w={"100%"} onClick={onCancel} theme={"gray"}>
+                {formatTextSlice(cancelText, direction === "row" ? 7 : 18)}
               </Button>
             )}
 
-            <Button size={'lg'} w={'100%'} onClick={onConfirm}>
-              {formatTextSlice(confirmText, onCancel && direction === 'row' ? 7 : 18)}
+            <Button size={"lg"} w={"100%"} onClick={onConfirm}>
+              {formatTextSlice(
+                confirmText,
+                onCancel && direction === "row" ? 7 : 18
+              )}
             </Button>
           </SC.Footer>
         </SC.Container>
       </SC.Popup>,
       ref.current
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};
 
 export const Popup = Object.assign(PopupMain, {
   Title,
   Content,
-})
+});
 
-export default Popup
+export default Popup;

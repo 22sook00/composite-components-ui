@@ -1,5 +1,5 @@
 const SIZE = {
-  MIN_WIDTH: 1272,
+  MIN_WIDTH: 768,
   GNB: {
     height: 60,
   },
@@ -12,6 +12,6 @@ const SIZE = {
   LNB_TABS: {
     height: 85,
   },
-}
+};
 
-export default SIZE
+export default SIZE;

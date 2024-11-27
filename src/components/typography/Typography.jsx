@@ -1,12 +1,12 @@
-import * as SC from './Typography.styles'
+import * as SC from "./Typography.styles";
 
-const createTypographyComponent = Component => props => {
+const createTypographyComponent = (Component) => (props) => {
   return (
     <SC.TextContainer {...props}>
       <Component {...props}>{props.children}</Component>
     </SC.TextContainer>
-  )
-}
+  );
+};
 
 const components = {
   H1: SC.Header1,
@@ -21,8 +21,11 @@ const components = {
   Body3: SC.Body3,
   Caption1: SC.Caption1,
   Caption2: SC.Caption2,
-}
+};
 
 export const Typography = Object.fromEntries(
-  Object.entries(components).map(([key, Component]) => [key, createTypographyComponent(Component)])
-)
+  Object.entries(components).map(([key, Component]) => [
+    key,
+    createTypographyComponent(Component),
+  ])
+);

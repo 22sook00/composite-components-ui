@@ -1,58 +1,22 @@
-import { color } from '@/styles/values/color'
-import styled from '@emotion/styled'
-import CircularProgress from '@mui/material/CircularProgress'
-import { useEffect, useState } from 'react'
+import styled from "@emotion/styled";
+import { useEffect, useState } from "react";
 
-const Loading = ({ size = 40, thickness = 4, delay = true, leftPosition = '50%', spinnerColor }) => {
-  const [view, setView] = useState(!delay)
+const Loading = ({ delay = true }) => {
+  const [view, setView] = useState(!delay);
 
   useEffect(() => {
     const time = setTimeout(() => {
-      setView(true)
-    }, [500])
+      setView(true);
+    }, [500]);
 
     return () => {
-      clearTimeout(time)
-    }
-  }, [])
-  return (
-    <>
-      {view && (
-        <Container>
-          {/* <Circular /> */}
-          <CircularProgress
-            variant="determinate"
-            sx={{
-              color: color.grayscale.gray[300],
-              position: 'absolute',
-              left: leftPosition,
-            }}
-            size={size}
-            thickness={thickness}
-            value={100}
-          />
-          <CircularProgress
-            variant="indeterminate"
-            disableShrink
-            sx={{
-              color: spinnerColor || color.primary.purple[300],
-              animationDuration: '550ms',
-              position: 'absolute',
-              left: leftPosition,
-              // [`& .${circularProgressClasses.circle}`]: {
-              //   strokeLinecap: 'round',
-              // },
-            }}
-            size={size}
-            thickness={thickness}
-          />
-        </Container>
-      )}
-    </>
-  )
-}
+      clearTimeout(time);
+    };
+  }, []);
+  return <>{view && <Container>로딩</Container>}</>;
+};
 
-export default Loading
+export default Loading;
 
 const Container = styled.div`
   position: absolute;
@@ -65,4 +29,4 @@ const Container = styled.div`
   height: 100%;
   z-index: 9999;
   overflow: hidden;
-`
+`;
