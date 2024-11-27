@@ -1,7 +1,7 @@
 import { Flex } from "@/components/layout";
 import React from "react";
 import { Typography } from "@/components/typography/Typography";
-import Tooltip from "@/components/overlay/tooltip/Tooltip";
+import { Tooltip } from "@/components/overlay/tooltip/Tooltip";
 import { Button } from "@/components/buttons";
 
 const sampleContent = `무형 상품은 음원, 도면, 이미지 등 특정 파일을 판매 가능합니다.\n입금/결제 완료 시 판매자의 별도 승인 없이 다운로드 가능하며
@@ -36,11 +36,11 @@ const TooltipCanvas = () => {
           onLink={() => {}}
         />
 
-        {/*<Tooltip.Root>
+        <Tooltip.Root>
           <Tooltip.Button>
             <Button>툴팁버튼</Button>
           </Tooltip.Button>
-          <Tooltip>
+          <Tooltip position={"right"}>
             <Tooltip.Title>툴팁커스텀타이틀</Tooltip.Title>
             <Tooltip.Content>{sampleContent}</Tooltip.Content>
           </Tooltip>
@@ -49,7 +49,7 @@ const TooltipCanvas = () => {
         <Tooltip>
           <Tooltip.Title>툴팁커스텀타이틀</Tooltip.Title>
           <Tooltip.Content>{sampleContent}</Tooltip.Content>
-        </Tooltip>*/}
+        </Tooltip>
       </Flex.Column>
       <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
       <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>

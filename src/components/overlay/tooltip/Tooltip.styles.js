@@ -40,7 +40,7 @@ export const Container = styled.div`
   padding: 12px;
 
   font-size: 14px;
-  max-width: 200px;
+  max-width: ${({ type }) => (type === "info" ? "500px" : "unset")};
   transition: opacity 0.2s ease;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   pointer-events: ${({ isVisible }) => (isVisible ? "auto" : "none")};
