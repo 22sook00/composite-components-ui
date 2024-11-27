@@ -1,11 +1,10 @@
-import { Flex } from "@/components/layout";
-import * as SC from "./_styles";
-import { Typography } from "@/components/common/typography/Typography";
-
 import { forwardRef } from "react";
+import { Flex } from "@/components/layout";
+import { Typography } from "@/components/typography/Typography";
 import IcSearchDefault20 from "./_assets/Ic_Search_Default_20";
 import useInputMode from "./_hooks/useTextInput";
-import { IconButton } from "@/components/common/buttons";
+import { IconButton } from "@/components/buttons";
+import * as SC from "./_styles";
 
 /**
  * @param {import('./_types').InputIconProps}

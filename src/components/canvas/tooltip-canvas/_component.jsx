@@ -9,48 +9,48 @@ const sampleContent = `무형 상품은 음원, 도면, 이미지 등 특정 파
 
 const TooltipCanvas = () => {
   return (
-    <>
-      <Flex.Column gap={"8px"}>
-        <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
-        <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
+    <Flex.Column gap={"8px"}>
+      <Typography.Title1>툴팁</Typography.Title1>
+      <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
+      <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
 
-        <Typography.Body1>기본 툴팁</Typography.Body1>
+      <Typography.Body1>기본 툴팁</Typography.Body1>
 
-        <Tooltip
-          title={"툴팁 타이틀"}
-          content={"가나다라마바사아차카타파하"}
-          linkText={"사이트 이동하기"}
-          onLink={() => {}}
-        />
-        <Tooltip
-          type={"info"}
-          position={"right"}
-          content={"가나다라마바사아차카타파하"}
-          linkText={"사이트 이동하기"}
-          onLink={() => {}}
-        />
+      <Tooltip
+        title={"툴팁 타이틀"}
+        content={"가나다라마바사아차카타파하"}
+        linkText={"사이트 이동하기"}
+        onLink={() => {}}
+      />
+      <Tooltip
+        type={"info"}
+        position={"right"}
+        content={"가나다라마바사아차카타파하"}
+        linkText={"사이트 이동하기"}
+        onLink={() => {}}
+      />
 
-        <Tooltip.Root>
-          <Tooltip.Button>
-            <Button>툴팁버튼</Button>
-          </Tooltip.Button>
-          <Tooltip position={"right"}>
-            <Tooltip.Title>툴팁커스텀타이틀</Tooltip.Title>
-            <Tooltip.Content>{sampleContent}</Tooltip.Content>
-          </Tooltip>
-        </Tooltip.Root>
-
-        <Tooltip>
+      <Tooltip.Root>
+        <Tooltip.Button>
+          <Button>툴팁버튼</Button>
+        </Tooltip.Button>
+        <Tooltip position={"right"}>
           <Tooltip.Title>툴팁커스텀타이틀</Tooltip.Title>
           <Tooltip.Content>{sampleContent}</Tooltip.Content>
         </Tooltip>
-      </Flex.Column>
+      </Tooltip.Root>
+
+      <Tooltip>
+        <Tooltip.Title>툴팁커스텀타이틀</Tooltip.Title>
+        <Tooltip.Content>{sampleContent}</Tooltip.Content>
+      </Tooltip>
+
       <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
       <Typography.H1 c={"#334155"}>스크롤⏬</Typography.H1>
       <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
@@ -61,7 +61,7 @@ const TooltipCanvas = () => {
       <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
       <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
       <Typography.H1 c={"#334155"}>스크롤⏫</Typography.H1>
-    </>
+    </Flex.Column>
   );
 };
 

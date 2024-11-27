@@ -22,6 +22,7 @@ export const Input = styled.input`
   :active,
   :focus {
     outline: none;
+    background: red;
     border: ${({ error }) =>
       error ? `1px solid #FF3366` : `1px solid #9D42FB`};
   }

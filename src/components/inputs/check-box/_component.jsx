@@ -1,10 +1,11 @@
-import { Typography } from "@/components/common/typography/Typography";
+import { Typography } from "@/components/typography/Typography";
 import { Flex } from "@/components/layout";
 
 import { forwardRef } from "react";
-import IcCheckActive24 from "./_assets/Ic_Check_Active_24";
+
 import * as SC from "./_styles";
 import { useId } from "react";
+import IcCheckActive24 from "./_assets/Ic_Check_Active_24";
 
 const CheckGroup = ({ children, error, ...rest }) => {
   return (
